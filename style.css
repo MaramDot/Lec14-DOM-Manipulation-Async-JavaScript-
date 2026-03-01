@@ -1,0 +1,182 @@
+
+:root{
+    --primary:#1E3147;
+    --secondary:#98A6AF;
+    --accent:#E7A133;
+    --soft:#C9A3A9;
+    --light:#CFCFCF;
+    --bg:#F2F4F7;
+    --danger:#D9534F;
+}
+
+body{
+    margin:0;
+    font-family:Poppins;
+    background:var(--bg);
+}
+
+
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 30px;
+    background:var(--primary);
+    color:white;
+}
+
+#booksContainer{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+    padding:20px;
+}
+
+.book{
+    background:white;
+    border-radius:10px;
+    padding:15px;
+    box-shadow:0 4px 8px rgba(0,0,0,0.08);
+    transition:0.3s;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+}
+
+.book:hover{
+    transform:scale(1.03);
+}
+
+.book h4{
+    color:var(--primary);
+}
+
+.book p{
+    color:var(--secondary);
+}
+
+
+button{
+    background:var(--accent);
+    border:none;
+    padding:10px;
+    color:white;
+    border-radius:6px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    opacity:0.85;
+}
+
+#cartSection{
+    padding:40px;
+    min-height:100vh;
+}
+
+.cart-container{
+    max-width:900px;
+    margin:auto;
+    background:white;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+}
+
+.cart-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-bottom:1px solid var(--light);
+    padding:15px 0;
+}
+
+.cart-item h5{
+    margin:0;
+    color:var(--primary);
+}
+
+.cart-item p{
+    margin:0;
+    color:var(--secondary);
+}
+
+.delete-btn{
+    background:var(--danger);
+    padding:7px 12px;
+    border-radius:6px;
+}
+
+.total-price{
+    text-align:right;
+    margin-top:20px;
+    font-size:20px;
+    font-weight:bold;
+    color:var(--primary);
+}
+
+.checkout-btn{
+    width:100%;
+    margin-top:20px;
+    background:var(--primary);
+    padding:12px;
+    border-radius:8px;
+}
+
+#backBtn{
+    margin-top:15px;
+    background:var(--accent);
+}
+
+
+#checkoutSection{
+    min-height:100vh;
+}
+
+#checkoutSection:not(.hidden){
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    gap:20px;
+}
+
+.hidden{
+    display:none;
+}
+
+@media(max-width:768px){
+
+    header{
+        flex-direction:column;
+        text-align:center;
+        gap:10px;
+    }
+
+    .cart-item{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:10px;
+    }
+
+    .total-price{
+        text-align:left;
+    }
+}
+
+.book img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+    border-radius:8px;
+    margin-bottom:10px;
+}
+
+.empty-cart{
+    text-align:center;
+    font-size:18px;
+    color:var(--secondary);
+    margin-top:20px;
+}
